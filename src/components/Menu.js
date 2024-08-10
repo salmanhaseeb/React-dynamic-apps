@@ -12,12 +12,18 @@ const Menu = () => {
   }, [dispatch]);
 
   return (
-    <nav>
-      <ul>
-        {menuItems.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <div className='container-fluid'>
+        <ul class="navbar-nav">
+          {menuItems.map((item, index) => (
+            <li class="nav-item" key={index}>
+              <a className="nav-link" href="#">
+                { item }
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };

@@ -1,4 +1,24 @@
-{
-  "app": "ApplicationA",
-  "menuItems": ["Home", "About", "Contact"]
-}
+[
+  {
+    "app": "ApplicationA",
+    "menuItems": ["Home", "About", "Contact"],
+    "components": [
+      {
+      "name": "RegistrationForm",
+      "version": "V1"
+      },
+      {
+        "name": "RegistrationForm",
+        "version": "V2"
+        }
+    ]
+  },
+  {
+    "app": "ApplicationB",
+    "menuItems": ["Home", "Profile", "Settings"]
+  },
+  {
+    "app": "ApplicationC",
+    "menuItems": ["Home C", "Profile C", "Settings C"]
+  }
+]

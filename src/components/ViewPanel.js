@@ -1,32 +1,24 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadApp, setMenuItems } from '../slices/appSlice';
-import appConfig from '../config/appConfig.json';
-import ApplicationA from '../applications/ApplicationA';
-import ApplicationB from '../applications/ApplicationB';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Menu from './Menu';
+import AppContentPlaceHolder from './AppContentPlaceHolder';
+import DynamicComponentLoader from './DynamicComponentLoader';
 
-const ViewPanel = () => {
-  const dispatch = useDispatch();
+function ViewPanel() {
+
   const currentApp = useSelector((state) => state.app.currentApp);
 
-  useEffect(() => {
-    dispatch(loadApp(appConfig.app));
-    dispatch(setMenuItems(appConfig.menuItems));
-  }, [dispatch]);
+  return (
+    <>
+      <h2 className='text-center'> Application View Panel </h2>
+      {
+        currentApp && <p> {currentApp} currently active. </p>
+      }
+      <Menu />
+      <AppContentPlaceHolder />
+      <DynamicComponentLoader />
+    </>
+  )
+}
 
-  let AppComponent = null;
-  switch (currentApp) {
-    case 'ApplicationA':
-      AppComponent = <ApplicationA />;
-      break;
-    case 'ApplicationB':
-      AppComponent = <ApplicationB />;
-      break;
-    default:
-      AppComponent = null;
-  }
-
-  return <div>{AppComponent}</div>;
-};
-
-export default ViewPanel;
+export default ViewPanel

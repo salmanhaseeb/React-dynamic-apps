@@ -1,9 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 
 const initialState = {
   menuItems: [],
   currentApp: null,
   currentComponentVersion: 'v1',
+  currentAppComponents: []
 };
 
 const appSlice = createSlice({
@@ -19,9 +20,12 @@ const appSlice = createSlice({
     setComponentVersion: (state, action) => {
       state.currentComponentVersion = action.payload;
     },
+    setAppComponents: (state, action) => {
+      state.currentAppComponents = action.payload;
+    }
   },
 });
 
-export const { setMenuItems, loadApp, setComponentVersion } = appSlice.actions;
+export const { setMenuItems, loadApp, setComponentVersion, setAppComponents } = appSlice.actions;
 
 export default appSlice.reducer;
