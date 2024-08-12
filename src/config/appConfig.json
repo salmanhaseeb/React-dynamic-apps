@@ -10,15 +10,35 @@
       {
         "name": "RegistrationForm",
         "version": "V2"
-        }
+      }
     ]
   },
   {
     "app": "ApplicationB",
-    "menuItems": ["Home", "Profile", "Settings"]
+    "menuItems": ["Home", "Profile", "Settings"],
+    "components": [
+      {
+      "name": "Simple Table",
+      "version": "V1"
+      },
+      {
+        "name": "Striped Table",
+        "version": "V2"
+      }
+    ]
   },
   {
     "app": "ApplicationC",
-    "menuItems": ["Home C", "Profile C", "Settings C"]
+    "menuItems": ["Home C", "Profile C", "Settings C"],
+    "components": [
+      {
+      "name": "Male Avatar",
+      "version": "V1"
+      },
+      {
+        "name": "Female Avatar",
+        "version": "V2"
+      }
+    ]
   }
 ]

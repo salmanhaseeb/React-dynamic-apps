@@ -1,6 +1,7 @@
 import {  useSelector } from 'react-redux';
 import ApplicationA from '../applications/ApplicationA';
 import ApplicationB from '../applications/ApplicationB';
+import ApplicationC from '../applications/ApplicationC'
 
 const AppContentPlaceHolder = () => {
   const currentApp = useSelector((state) => state.app.currentApp);
@@ -12,6 +13,9 @@ const AppContentPlaceHolder = () => {
       break;
     case 'ApplicationB':
       AppComponent = <ApplicationB />;
+      break;
+    case 'ApplicationC':
+      AppComponent = <ApplicationC />;
       break;
     default:
       AppComponent = null;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {  useDispatch, useSelector } from 'react-redux';
-import appConfig from '../config/appConfig.json'
+import { setComponentVersion } from '../slices/appSlice';
 
 function AppComponentPanel() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -11,15 +11,13 @@ function AppComponentPanel() {
 
   function handleSwitchComponent(index) {
     setActiveIndex(index);
-    // dispatch(loadApp(appConfig[index].app));
-    // dispatch(setMenuItems(appConfig[index].menuItems));
-    // dispatch(setCurrentAppComponents(appConfig[index].components))
+    dispatch(setComponentVersion(currentAppComponents[index].version))
   }
 
   return (
     <>
       <h2 className='text-center'> Components </h2>
-      <p className='text-center'> { currentApp && `Showing components for ${currentApp}` } </p>
+      <p className='text-center'> { currentApp ? `Showing components for ${currentApp}` : 'Please select an application' } </p>
 
       <ul className='list-unstyled'>
         {

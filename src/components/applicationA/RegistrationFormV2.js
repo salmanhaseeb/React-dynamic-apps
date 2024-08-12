@@ -4,15 +4,15 @@ const RegistrationFormV2 = () => {
   return (
     <form>
       <h3>Registration Form V2</h3>
-      <label>
+      <label className='form-label'>
         Full Name:
-        <input type="text" name="fullName" />
+        <input className='form-control' type="text" name="fullName" />
       </label>
       <label>
         Email:
-        <input type="email" name="email" />
+        <input className='form-control' type="email" name="email" />
       </label>
-      <button type="submit">Register</button>
+      <button className='btn btn-primary' type="submit">Register</button>
     </form>
   );
 };

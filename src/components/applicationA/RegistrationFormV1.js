@@ -4,11 +4,11 @@ const RegistrationFormV1 = () => {
   return (
     <form>
       <h3>Registration Form V1</h3>
-      <label>
+      <label className="form-label">
         Name:
-        <input type="text" name="name" />
+        <input type="text" name="name" className="form-control" />
       </label>
-      <button type="submit">Submit</button>
+      <button className='btn btn-primary' type="submit">Submit</button>
     </form>
   );
 };

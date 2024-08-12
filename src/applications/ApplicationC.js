@@ -1,17 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import DynamicComponentLoader from '../components/DynamicComponentLoader';
-import RegistrationFormV1 from '../components/applicationA/RegistrationFormV1';
-import RegistrationFormV2 from '../components/applicationA/RegistrationFormV2';
+import MaleAvatar from '../components/applicationC/MaleAvatar.js'
+import FemaleAvatar from '../components/applicationC/FemaleAvatar.js';
 
-const ApplicationA = () => {
+const ApplicationB = () => {
   const currentComponentVersion = useSelector((state) => state.app.currentComponentVersion);
 
   let ComponentToRender;
   if (currentComponentVersion === 'V1') {
-    ComponentToRender = <RegistrationFormV1 />;
+    ComponentToRender = <MaleAvatar />;
   } else {
-    ComponentToRender = <RegistrationFormV2 />;
+    ComponentToRender = <FemaleAvatar />;
   }
 
   return (
@@ -21,4 +21,4 @@ const ApplicationA = () => {
   );
 };
 
-export default ApplicationA;
+export default ApplicationB;
